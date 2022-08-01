@@ -22,6 +22,11 @@ const router = createRouter({
       name: 'cookbook',
       component: () => import('../views/CookBookView.vue'),
     },
+    {
+      path: '/cookbook/:courseId',
+      name: 'course',
+      component: () => import('../views/CourseView.vue'),
+    },
   ],
 });
 
