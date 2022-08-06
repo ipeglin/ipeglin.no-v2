@@ -1,4 +1,4 @@
-import db from '../config/database';
+import db from '../config/database.js';
 
 // Get all courses
 export const getCourses = (result) => {

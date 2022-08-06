@@ -1,4 +1,4 @@
-import { getCourses, insertCourse } from '../models/productModels';
+import { getCourses, insertCourse } from '../models/productModels.js';
 
 // Get all courses
 export const showCourses = (req, res) => {
