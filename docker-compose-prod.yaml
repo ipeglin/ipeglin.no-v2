@@ -1,0 +1,27 @@
+version: '3.4'
+services:
+  backend:
+  container_name: backend_container_name
+  build:
+    context: ./backend
+  args:
+    - https_proxy= ${https_proxy}
+    - http_proxy= ${http_proxy}
+  volumes:
+    - ./backend:/backend
+    - /backend/node_modules
+  ports: ['3333:3333']
+  env_file:
+    - .env
+  frontend:
+    container_name: frontend_container_name
+  build:
+    context: ./frontend
+    dockerfile: dockerfile
+    args:
+      - https_proxy= ${https_proxy}
+      - http_proxy= ${http_proxy}
+  ports: 
+    - '8080:8080'
+  env_file:
+    - .env
