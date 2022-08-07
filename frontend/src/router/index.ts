@@ -17,16 +17,6 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
     },
-    {
-      path: '/cookbook',
-      name: 'cookbook',
-      component: () => import('../views/CookBookView.vue'),
-    },
-    {
-      path: '/cookbook/:courseId',
-      name: 'course',
-      component: () => import('../views/CourseView.vue'),
-    },
   ],
 });
 
