@@ -69,13 +69,13 @@
       content: ' ';
       position: absolute;
       display: block;
-      top: 1px;
+      top: 3px;
       right: 50%;
-      bottom: 0px;
+      bottom: 1px;
       left: 50%;
-      height: 100%;
+      height: 95%;
       width: 1px;
-      transform: scale(1, 2);
+      transform: scale(1, 1.91);
       transform-origin: 50% -100%;
       background-color: rgba(0, 0, 0, .25);
       z-index: -1;
