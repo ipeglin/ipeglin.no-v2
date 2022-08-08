@@ -6,6 +6,7 @@
   interface Props {
     image?: string,
     title: string,
+    underlineTitle?: boolean,
     content: string,
     centerContent?: boolean,
     socials?: SocialsInterface[],
@@ -18,7 +19,7 @@
   <div class="card">
     <img v-if="image" :src="image" class="profile-image" />
     <div class="card-content">
-      <h1 class="card-title">{{ title }}</h1>
+      <h1 :class="`card-title ${underlineTitle ? 'underline' : ''}`">{{ title }}</h1>
       <p :class="`card-text ${centerContent ? 'centered' : ''}`">{{ content }}</p>
       <div v-if="socials?.length !== 0" class="badge-container">
         <BadgeHandler v-for="link in props.socials" :props="link" />
@@ -45,11 +46,14 @@
       .card-title {
         font-weight: 600;
         font-size: 1.1rem;
-        text-decoration: underline;
-        text-underline-offset: 8px;
-        text-decoration-thickness: 1.5px;
-        text-decoration-color: $color-accent;
-        margin-bottom: 18px;
+
+        &.underline {
+          text-decoration: underline;
+          text-underline-offset: 8px;
+          text-decoration-thickness: 1.5px;
+          text-decoration-color: $color-card-title-underline;
+          margin-bottom: 18px;
+        }
       }
 
       .card-text {

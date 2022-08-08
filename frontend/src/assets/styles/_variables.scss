@@ -8,6 +8,10 @@ $color-accent: #8685ef;
 $color-white: #ffffff;
 $color-reenforce: #d3fbd8;
 
+// Font
+$color-font-primary: $color-black;
+$color-font-emphasize: #161616;
+
 // Button
 $color-button-primary: $color-accent;
 $color-button-hover: hsl(241, 77%, 70%);
@@ -16,3 +20,4 @@ $color-button-shadow: rgba($color-button-primary, .3);
 // Card
 $color-card-background: #e7e7e7;
 $color-card-shadow: #111111;
+$color-card-title-underline: $color-accent;
