@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="navigation">
+  <div class="navigation container">
     <nav>
       <ul>
         <li>
@@ -22,37 +22,41 @@
 
 <style scoped lang="scss">
   .navigation {
-    background: none;
+    background: $color-reenforce;
     overflow: hidden;
-    position: fixed;
+    position: relative;
     top: 0;
     padding: 0;
     width: 100%;
-    z-index: 9;
+    z-index: 100;
 
     nav>ul {
+      margin: 0;
+      padding: 0;
       float: right;
 
       li {
         display: inline-block;
         list-style: none;
+        padding: 0; 
+        margin: 0;
         
-      .navlink {
-        float: left;
-        color: $color-black;
-        text-align: center;
-        padding: 14px 16px;
-        font-size: 17px;
-        text-decoration: none;
-        margin-right: 10px;
-      }
+        .navlink {
+          float: left;
+          color: $color-black;
+          text-align: center;
+          padding: 14px 16px;
+          font-size: 17px;
+          text-decoration: none;
+          margin-right: 10px;
+        }
 
-      .router-link-active {
-        text-decoration: underline;
-        text-underline-offset: 5px;
-        text-decoration-color: $color-accent;
-        text-decoration-thickness: 1.5px;
-      }
+        .router-link-active {
+          text-decoration: underline;
+          text-underline-offset: 5px;
+          text-decoration-color: $color-accent;
+          text-decoration-thickness: 1.5px;
+        }
       }
     }
   }
