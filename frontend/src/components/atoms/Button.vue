@@ -38,11 +38,17 @@ const handleClick = () => {
     color: white;
     white-space: nowrap;
     box-shadow: 8px 8px 30px 0px $color-button-shadow;
+    transition: ease-out .2s;
+
+    &:hover {
+      background: $color-button-hover;
+    }
 
     &.disabled {
       background: $color-white;
       color: #525060;
       box-shadow: none;
+      cursor: default;
     }
 
     &.size-sm {
