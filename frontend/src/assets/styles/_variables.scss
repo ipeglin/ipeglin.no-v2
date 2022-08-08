@@ -7,15 +7,18 @@ $color-black: #3b3b3b;
 $color-accent: #8685ef;
 $color-white: #ffffff;
 $color-reenforce: #d3fbd8;
+$color-gray: #e7e7e7;
+$color-darkgray: #b3b3b3;
 
 // Font
 $color-font-primary: $color-black;
+$color-font-subtle: #777777;
 $color-font-emphasize: #333333;
 
 // Button
 $color-button-primary: $color-accent;
 $color-button-hover: hsl(241, 77%, 70%);
-$color-button-disabled: #e7e7e7;
+$color-button-disabled: $color-gray;
 $color-button-shadow: rgba($color-button-primary, .3);
 
 // Card

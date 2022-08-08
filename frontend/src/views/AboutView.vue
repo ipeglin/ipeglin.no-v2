@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { SocialsInterface } from "@/assets/interfaces/SocialsInterface";
+import type { NumberedStepInterface, TimelineStepInterface } from '@/assets/interfaces/StepInterface';
+
 import InfoCard from "../components/organisms/InfoCard.vue";
+import StepperHandler from "../components/handlers/StepperHandler.vue";
 
 const socials: SocialsInterface[] = [
   {
@@ -24,13 +27,52 @@ const socials: SocialsInterface[] = [
     alt: 'Visit Instagram profile',
   },
 ]
+
+const stepperContent: NumberedStepInterface[] = [
+  {
+    title: "Elsys 1.sem",
+    caption: ['TTT4255', 'TTT4203', 'TMA4101', 'TDT4110'],
+    active: false,
+  },
+  {
+    title: "Elsys 2.sem",
+    caption: ['TDT4102', 'TMA4106', 'TTT4260', 'TMA4145'],
+    active: false,
+  },
+  {
+    title: 'Elsys 3.sem',
+    caption: ['TDT4160', 'TFY4115', 'TMA4111', 'TTT4265'],
+    active: true,
+  },
+]
+
+const timelineContent: TimelineStepInterface[] = [
+  {
+    title: 'Learning assistant',
+    caption: 'DCST1003: Grunnleggende programmering',
+    start: new Date('2020-08-01'),
+    end: new Date('2020-12-14'),
+  },
+  {
+    title: 'Webutvikler',
+    caption: 'Sommerstudent, Adresseavisen',
+    start: new Date('2021-06-13'),
+    end: new Date('2021-07-05'),
+  },
+  {
+    title: 'Learning assistant',
+    caption: 'TDT4110: Informatikk, grunnkurs',
+    start: new Date('2021-07-22'),
+  }
+]
 </script>
 
 <template>
   <div class="about container">
     <h1 class="header" >About me</h1>
     <InfoCard title="Ian Philip Eglin" image="src/assets/img/profile.png" centerContent content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque blandit ipsum sed enim vestibulum hendrerit quis sit amet justo. Sed gravida orci et euismod facilisis. " :socials="socials" />
-    <InfoCard title="Card Title" underline-title content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque blandit ipsum sed enim vestibulum hendrerit quis sit amet justo. Sed gravida orci et euismod facilisis. " :socials="socials" />
+    <StepperHandler title="Experience" :content="timelineContent" />
+    <StepperHandler title="Education" :content="stepperContent" />
   </div>
 </template>
 
