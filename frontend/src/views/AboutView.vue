@@ -4,6 +4,7 @@ import type { NumberedStepInterface, TimelineStepInterface } from '@/assets/inte
 
 import InfoCard from "../components/organisms/InfoCard.vue";
 import StepperHandler from "../components/handlers/StepperHandler.vue";
+import { setActiveSemester } from "@/composables/setActiveSemester";
 
 const socials: SocialsInterface[] = [
   {
@@ -31,18 +32,30 @@ const socials: SocialsInterface[] = [
 const stepperContent: NumberedStepInterface[] = [
   {
     title: "Elsys 1.sem",
-    caption: ['TTT4255', 'TTT4203', 'TMA4101', 'TDT4110'],
+    caption: ['ITGK', 'Matte 1', 'ElsysGK', 'ADE'],
+    start: new Date('2021-08-15'),
+    end: new Date('2021-12-18'),
     active: false,
   },
   {
     title: "Elsys 2.sem",
-    caption: ['TDT4102', 'TMA4106', 'TTT4260', 'TMA4145'],
+    caption: ['ESDA I', 'Matte 2', 'Statstikk', 'OOP'],
+    start: new Date('2021-01-13'),
+    end: new Date('2021-06-07'),
     active: false,
   },
   {
     title: 'Elsys 3.sem',
-    caption: ['TDT4160', 'TFY4115', 'TMA4111', 'TTT4265'],
-    active: true,
+    caption: ['Datamaskiner og digitalteknikk', 'Fysikk', 'Matte 3', 'ESDA II'],
+    start: new Date('2022-08-22'),
+    end: new Date('2022-12-14'),
+    active: false,
+  },
+  {
+    title: 'Elsys 4.sem',
+    caption: ['Elektromagnetisme', 'Grunnlag for faststoffelektronikk', 'Matte 4', 'Elsys, prosjekt'],
+    start: new Date('2023-01-15'),
+    active: false,
   },
 ]
 
@@ -65,6 +78,8 @@ const timelineContent: TimelineStepInterface[] = [
     start: new Date('2021-07-22'),
   }
 ]
+
+setActiveSemester(stepperContent);
 
 const infoCardContent: string = "I am currently pursuing an education at NTNU, Trondheim, where I specialice in electronics systems design. In my spare time I enjoy programming and webdevelopment. Previously I've had experience with larger code bases, i.e. while being a summer intern at Polaris Media Teknologi."
 </script>

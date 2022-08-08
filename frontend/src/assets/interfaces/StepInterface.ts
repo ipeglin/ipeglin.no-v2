@@ -9,5 +9,7 @@ export interface TimelineStepInterface extends StepInterface {
 }
 
 export interface NumberedStepInterface extends StepInterface {
+  start?: Date,
+  end?: Date,
   active: boolean,
 }

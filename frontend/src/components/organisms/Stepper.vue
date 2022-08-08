@@ -41,7 +41,7 @@
     min-height: 1em;
     align-self: center;
     width: 55%;
-    max-width: 325px;
+    max-width: 330px;
     margin-left: 25px;
 
     .title, .caption {
@@ -59,12 +59,15 @@
       .paragraph-list {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: start;
         margin-bottom: -.3em;
 
-        * {
+        p {
           padding: 0;
           margin: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
     }
