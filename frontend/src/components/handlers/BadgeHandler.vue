@@ -9,8 +9,6 @@ interface Props {
   }
 }
 const { props } = defineProps<Props>();
-
-console.log('BadgeHandler props', props)
 </script>
 
 <template>
