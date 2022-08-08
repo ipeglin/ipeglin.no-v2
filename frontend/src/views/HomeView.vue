@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import Button from '@/components/atoms/Button.vue';
 
-const handleClick = () => {console.log('Clicked')}
 </script>
 
 <template>
