@@ -7,6 +7,14 @@ body {
   color: $color-font-primary;
 }
 
+img {
+  svg {
+    path {
+      fill: $color-accent;
+    }
+  }
+}
+
 .container {
   max-width: $max-width;
   margin: 0 auto;

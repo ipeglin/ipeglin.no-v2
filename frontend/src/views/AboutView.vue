@@ -6,17 +6,22 @@ const socials: SocialsInterface[] = [
   {
     image: 'src/assets/img/socials/linkedin.svg',
     to: 'https://no.linkedin.com/in/ipeglin',
-    alt: 'LinkedIn Logo',
-  },
-  {
-    image: 'src/assets/img/socials/instagram.svg',
-    to: 'https://instagram.com/ipeglin',
-    alt: 'Instagram Logo',
+    alt: 'Visit LinkedIn profile',
   },
   {
     image: '/src/assets/img/socials/github.svg',
     to: 'https://github.com/ipeglin',
-    alt: 'GitHub Logo'
+    alt: 'Visit GitHub profile'
+  },
+  {
+    image: 'src/assets/img/socials/twitter.svg',
+    to: 'https://twitter.com/philipeglin',
+    alt: 'Visit Twitter profile'
+  },
+  {
+    image: 'src/assets/img/socials/instagram.svg',
+    to: 'https://instagram.com/ipeglin',
+    alt: 'Visit Instagram profile',
   },
 ]
 </script>

@@ -3,6 +3,7 @@ interface Props {
   image: string,
   link: string,
 }
+
 const props = defineProps<Props>();
 </script>
 
