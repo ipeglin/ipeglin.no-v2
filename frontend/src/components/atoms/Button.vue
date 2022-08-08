@@ -45,7 +45,7 @@ const handleClick = () => {
     }
 
     &.disabled {
-      background: $color-white;
+      background: $color-button-disabled;
       color: #525060;
       box-shadow: none;
       cursor: default;

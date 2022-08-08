@@ -22,7 +22,6 @@
 
 <style scoped lang="scss">
   .navigation {
-    background: $color-reenforce;
     overflow: hidden;
     position: relative;
     top: 0;
