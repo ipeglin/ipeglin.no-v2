@@ -1,8 +1,9 @@
 $color-black: #3b3b3b;
-$color-purple: #8685ef;
+$color-accent: #8685ef;
 $color-white: #faf8ff;
-$color-accent: #d3fbd8;
+$color-reenforce: #d3fbd8;
 
-$color-button-primary: $color-purple;
+// Button
+$color-button-primary: $color-accent;
 $color-button-hover: hsl(241, 77%, 70%);
-$color-button-shadow: rgba($color-purple, .3);
+$color-button-shadow: rgba($color-button-primary, .3);
