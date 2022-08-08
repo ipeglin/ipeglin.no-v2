@@ -32,7 +32,7 @@ const isNumberedStepper = (content: NumberedStepInterface[] | TimelineStepInterf
   .stepper {
     display: flex;
     flex-direction: column;
-    margin-block: 20px;
+    margin-top: 20px;
     width: 95%;
 
     .stepper-title {
