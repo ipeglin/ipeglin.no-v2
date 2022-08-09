@@ -20,5 +20,12 @@ const { props } = defineProps<Props>();
   * {
     padding-inline: 5px;
     margin: 0;
+    transition-duration: .15s;
+    transition-property: -moz-filter, -ms-filter, -o-filter, -webkit-filter, filter;
+    
+    :hover {
+      filter:brightness(80%);
+      transition-duration: .15s;
+    }
   }
 </style>

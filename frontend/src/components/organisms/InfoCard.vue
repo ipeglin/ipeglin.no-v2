@@ -35,7 +35,7 @@
     margin-inline: 12px;
     margin-top: 80px;
     min-width: 350px;
-    max-width: calc($max-width - 10%);
+    max-width: calc($max-width - 20%);
     box-shadow: 8px 8px 30px 0px rgba($color-card-shadow, 0.1);
 
     .card-content {

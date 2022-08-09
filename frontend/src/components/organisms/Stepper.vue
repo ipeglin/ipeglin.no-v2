@@ -140,13 +140,4 @@
       padding-left: 1em;
     }
   }
-
-
-
-  
-
-
-
-
-
 </style>
