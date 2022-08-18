@@ -1,10 +1,14 @@
-import mysql from 'mysql2';
+import admin from 'firebase-admin';
+import serviceAccount from '../serviceAccountKey.json';
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'test'
-});
+if (!admin.apps.length) {
+  try {
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount)
+    });
+  } catch (error) {
+    console.log('Firebase admin initialization error', error.stack);
+  }
+}
 
-export default db;
+export const db = admin.firestore();
