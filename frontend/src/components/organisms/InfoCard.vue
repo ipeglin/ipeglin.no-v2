@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import type { SocialsInterface } from "@/assets/interfaces/SocialsInterface";
+  import { useGitHubStore } from "@/stores/github";
   import BadgeHandler from "../handlers/BadgeHandler.vue";
 
 
@@ -7,21 +8,41 @@
     image?: string,
     title: string,
     underlineTitle?: boolean,
-    content: string,
-    centerContent?: boolean,
     socials?: SocialsInterface[],
   }
 
   const props = defineProps<Props>();
+  const githubStore = useGitHubStore();
 </script>
 
 <template>
-  <div class="card">
-    <img v-if="image" :src="image" class="profile-image" />
-    <div class="card-content">
-      <h1 :class="`card-title ${underlineTitle ? 'underline' : ''}`">{{ title }}</h1>
-      <p :class="`card-text ${centerContent ? 'centered' : ''}`">{{ content }}</p>
-      <div v-if="socials?.length !== 0" class="badge-container">
+  <div class="profile-card">
+    <img v-if="image" :src="image" class="profile-card__image" />
+    <div class="profile-card__content">
+      <h1 :class="`profile-card__title ${underlineTitle ? 'underline' : ''}`">{{ title }}</h1>
+      <div>Student and developer</div>
+
+      <div class="profile-card__location">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <circle cx="12" cy="11" r="3"></circle>
+          <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+        </svg>
+        <span>Trondheim, NO</span>
+      </div>
+
+      <div class="profile-card__info">
+        <div>
+          <div>{{ githubStore.numberOfFollowers }}</div>
+          <div>Followers</div>
+        </div>
+        <div>
+          <div>{{ githubStore.numberOfRepos }}</div>
+          <div>Projects</div>
+        </div>
+      </div>
+
+      <div v-if="socials?.length !== 0" class="profile-card__socials">
         <BadgeHandler v-for="link in props.socials" :props="link" />
       </div>
     </div>
@@ -29,25 +50,25 @@
 </template>
 
 <style scoped lang="scss">
-  .card {
+  .profile-card {
     background: $color-card-background;
     border-radius: 12px;
     margin-inline: 12px;
     margin-top: 80px;
-    min-width: 350px;
+    min-width: 100vh;
     max-width: calc($max-width - 20%);
     box-shadow: 8px 8px 30px 0px rgba($color-card-shadow, 0.1);
 
-    .card-content {
+    .profile-card__content {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
       padding: 15px;
 
-      .card-title {
+      .profile-card__title {
         font-weight: 600;
-        font-size: 1.1rem;
+        font-size: 2rem;
 
         &.underline {
           text-decoration: underline;
@@ -56,32 +77,65 @@
           text-decoration-color: $color-card-title-underline;
           margin-bottom: 18px;
         }
-      }
 
-      .card-text {
-        font-weight: 400;
-        font-size: .7rem;
-        margin: 0;
-        width: 95%;
-        text-align: justify;
-        
-        &.centered {
-          text-align: center;
+        &+div {
+          font-size: 1rem;
+          font-weight: 500;
         }
       }
 
-      .badge-container {
-        margin-top: 20px;
-        width: 50%;
+      .profile-card__location {
+        margin-block: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: .9rem;
+        gap: 10px;
+      }
+
+      .profile-card__info{
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: 576px) {
+          gap: 30px;
+        }
+
+        & > div {
+          text-transform: uppercase;
+          font-weight: bold;
+          letter-spacing: 1px;
+          text-align: center;
+
+          & > *:first-child {
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 2rem;
+            margin-bottom: 15px;
+          }
+
+          & > *:last-child {
+            font-size: 1rem;
+            opacity: .7;
+          }
+        }
+      }
+
+      .profile-card__socials {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 80%;
         max-width: 150px;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
       }
     }
   }
 
-  .profile-image {
+  .profile-card__image {
     width: 100px;
     height: 100px;
     border-radius: 50%;

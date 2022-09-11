@@ -15,7 +15,7 @@ const props = defineProps<Props>();
 
 <style scoped lang="scss">
 .badge-image {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
   }
 </style>

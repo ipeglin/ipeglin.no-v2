@@ -119,7 +119,8 @@
       }
   
       .circle {
-        background: $color-reenforce;
+        // background: $color-reenforce;
+        background: $color-success; 
       }
     }
 

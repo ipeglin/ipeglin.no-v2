@@ -47,7 +47,7 @@ const stepperContent: NumberedStepInterface[] = [
   {
     title: 'Elsys 3.sem',
     caption: ['Datamaskiner og digitalteknikk', 'Fysikk', 'Matte 3', 'ESDA II'],
-    start: new Date('2022-07-05'),
+    start: new Date('2022-07-04'),
     end: new Date('2022-12-14'),
     active: false,
   },
@@ -81,14 +81,12 @@ const timelineContent: TimelineStepInterface[] = [
 ]
 
 setActiveSemester(stepperContent);
-
-const infoCardContent: string = "I am currently pursuing an education at NTNU, Trondheim, where I specialice in electronics systems design. In my spare time I enjoy programming and webdevelopment. Previously I've had experience with larger code bases, i.e. while being a summer intern at Polaris Media Teknologi."
 </script>
 
 <template>
   <div class="about container">
     <h1 class="header" >About me</h1>
-    <InfoCard center-content title="Ian Philip Eglin" image="src/assets/img/profile.png" :content="infoCardContent" :socials="socials" />
+    <InfoCard center-content title="Ian Philip Eglin" image="src/assets/img/profile.png" :socials="socials" />
     <StepperHandler title="Experience" :content="timelineContent" />
     <StepperHandler title="Education" :content="stepperContent" />
   </div>
