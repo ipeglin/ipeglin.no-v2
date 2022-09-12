@@ -64,19 +64,19 @@ const timelineContent: TimelineStepInterface[] = [
   {
     title: 'Learning assistant',
     caption: 'DCST1003: Grunnleggende programmering',
-    start: new Date('2020-08-01'),
-    end: new Date('2020-12-14'),
+    start: new Date('2021-08-01'),
+    end: new Date('2021-12-14'),
   },
   {
     title: 'Webutvikler',
     caption: 'Sommerstudent, Adresseavisen',
-    start: new Date('2021-06-13'),
-    end: new Date('2021-07-05'),
+    start: new Date('2022-06-13'),
+    end: new Date('2022-07-05'),
   },
   {
     title: 'Learning assistant',
     caption: 'TDT4110: Informatikk, grunnkurs',
-    start: new Date('2021-07-22'),
+    start: new Date('2022-07-22'),
   }
 ]
 

@@ -54,7 +54,7 @@
     background: $color-card-background;
     border-radius: 12px;
     margin-inline: 12px;
-    margin-top: 80px;
+    margin-top: 100px;
     min-width: 100vh;
     max-width: calc($max-width - 20%);
     box-shadow: 8px 8px 30px 0px rgba($color-card-shadow, 0.1);
@@ -136,12 +136,12 @@
   }
 
   .profile-card__image {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     position: relative;
-    top: -65px;
-    left: calc(50% - 52px);
+    top: -85px;
+    left: calc(50% - 75px);
     background-color: $color-white;
     padding: 2px;
     margin-bottom: -80px;
