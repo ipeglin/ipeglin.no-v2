@@ -63,9 +63,9 @@ import Mesh from "../molecules/Mesh.vue";
     border-radius: 12px;
     margin-inline: 12px;
     margin-top: 100px;
-    min-width: 100vh;
+    min-width: 100%;
     height: 550px;
-    // max-width: calc($max-width - 20%);
+    max-width: 100%;
     box-shadow: 8px 8px 30px 0px rgba($color-card-shadow, 0.1);
     backdrop-filter: blur(50px);
     
