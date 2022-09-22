@@ -27,7 +27,7 @@
               <h1>{{ item.title }}</h1>
             </div>
           </div>
-          <a v-if="item.link" :class="`navlink ${showLink ? '' : 'hidden'}`" :href="item.link">
+          <a v-if="item.link" :class="`navlink ${showLink ? '' : 'hidden'}`" :href="item.link" target="_blank">
             View Project<svg-icon class="arrow-icon" type="mdi" :path="mdiArrowRight" :size="18"></svg-icon>
           </a>
           <div class="slide__background">
