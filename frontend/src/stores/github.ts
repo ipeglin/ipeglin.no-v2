@@ -1,35 +1,42 @@
 import { defineStore } from "pinia";
-import { onUpdated } from "vue";
+import axios from 'axios';
 
 export const useGitHubStore = defineStore('github', {
   state: () => ({
     repositories: [] as any[],
+    currentRepository: {} as any,
     followers: [] as any[],
   }),
   getters: {
+    repos: (state) => state.repositories,
+    repo: (state) => state.currentRepository,
     numberOfRepos: (state) => state.repositories.length,
     numberOfFollowers: (state) => state.followers.length,
   },
   actions: {
-    updateRepositories() {
-      fetch("https://api.github.com/users/ipeglin/repos")
-        .then((response) => response.json())
-        .then((data) => {
-          this.repositories = data;
-        })
-        .catch((error) => console.error(error));
+    async fetchRepositories() {
+      try {
+        const data = await axios.get('https://api.github.com/users/ipeglin/repos');
+        this.repositories = data.data;
+      } catch (error) {
+        console.error(error);
+      }
     },
-    updateFollowers() {
-      fetch("https://api.github.com/users/ipeglin/followers")
-        .then((response) => response.json())
-        .then((data) => {
-          this.followers = data
-        })
-        .catch((error) => console.error(error));
+    async fetchFollowers() {
+      try {
+        const data = await axios.get('https://api.github.com/users/ipeglin/followers');
+        this.followers = data.data;
+      } catch (error) {
+        console.error(error);
+      }
     },
-    updateStore() {
-      this.updateRepositories();
-      this.updateFollowers();
+    async fetchRepository(repoName: string) {
+      try {
+        const data = await axios.get(`https://api.github.com/repos/ipeglin/${repoName}`)
+        this.currentRepository = data.data;
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 })
