@@ -5,6 +5,7 @@
 <template>
   <div class="navigation container">
     <nav>
+      <img class="navigation__logo accent" src="@/assets/img/ipeglin logo short.svg" />
       <ul>
         <li>
           <RouterLink class="navlink" to="/">Home</RouterLink>
@@ -28,6 +29,13 @@
     padding: 0;
     width: 100%;
     z-index: 100;
+
+    &__logo {
+      position:absolute;
+      height: 80%;
+      padding-top: 7px;
+      margin-left: 10px;
+    }
 
     nav>ul {
       margin: 0;

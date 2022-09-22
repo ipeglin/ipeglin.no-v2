@@ -17,6 +17,14 @@ img {
     }
   }
 
+  &.black {
+    svg {
+      path {
+        fill: $color-black;
+      }
+    }
+  }
+
   &.white {
     svg {
       path {
