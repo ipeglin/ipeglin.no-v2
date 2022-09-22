@@ -3,7 +3,7 @@
   import { useGitHubStore } from "@/stores/github";
   import { onBeforeMount } from "vue";
   import BadgeHandler from "../handlers/BadgeHandler.vue";
-import Mesh from "../molecules/Mesh.vue";
+  import Mesh from "../molecules/Mesh.vue";
 
   interface Props {
     image?: string,
@@ -63,9 +63,9 @@ import Mesh from "../molecules/Mesh.vue";
     border-radius: 12px;
     margin-inline: 12px;
     margin-top: 100px;
-    min-width: 100%;
-    height: 550px;
-    max-width: 100%;
+    min-width: 80%;
+    height: 450px;
+    max-width: 80%;
     box-shadow: 8px 8px 30px 0px rgba($color-card-shadow, 0.1);
     backdrop-filter: blur(50px);
     
@@ -116,7 +116,7 @@ import Mesh from "../molecules/Mesh.vue";
         display: flex;
         justify-content: center;
         gap: 50px;
-        margin-block: 40px;
+        margin-block: 10px;
 
         @media screen and (max-width: 576px) {
           gap: 30px;
