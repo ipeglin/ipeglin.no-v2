@@ -64,7 +64,8 @@ import Mesh from "../molecules/Mesh.vue";
     margin-inline: 12px;
     margin-top: 100px;
     min-width: 100vh;
-    max-width: calc($max-width - 20%);
+    height: 550px;
+    // max-width: calc($max-width - 20%);
     box-shadow: 8px 8px 30px 0px rgba($color-card-shadow, 0.1);
     backdrop-filter: blur(50px);
     
@@ -115,7 +116,7 @@ import Mesh from "../molecules/Mesh.vue";
         display: flex;
         justify-content: center;
         gap: 50px;
-        margin-bottom: 20px;
+        margin-block: 40px;
 
         @media screen and (max-width: 576px) {
           gap: 30px;
