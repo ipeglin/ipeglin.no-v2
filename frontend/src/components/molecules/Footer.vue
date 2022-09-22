@@ -4,11 +4,11 @@
 
 <template>
   <footer class="footer">
-    <div class="container">
+    <div class="container text-container">
       <div class="footer__logo">
-        <img class="white" src="@/assets/img/logo_no_background.png" />
+        <img class="white" src="@/assets/img/ipeglin logo long.svg" />
       </div>
-      <h1>This is the footer</h1>
+      <p>Student and developer</p>
     </div>
   </footer>
 </template>
@@ -22,15 +22,23 @@
     background: $color-black;
     color: $color-font-light;
 
-    &__logo {
+    .text-container {
+      // background-color: green;
+      height: 100%;
 
-      img {
-        width: 100px;
+      .footer__logo {
+        padding-top: 80px;
+        padding-left: 10px;
+        img {
+          width: 180px;
+        }
       }
-    }  
-  }
 
-  .container {
-
+      p {
+        padding-left: 10px;
+        margin: 0;
+        color: $color-font-subtle;
+      }
+    }
   }
 </style>
