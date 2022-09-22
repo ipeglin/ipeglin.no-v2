@@ -48,8 +48,12 @@
   @import url('https://unpkg.com/vue-agile/dist/VueAgile.css');
 
   .carousel {
+    width: 960px;
+    height: 550px;
+
     &__container {
-      width: 85%;
+      width: 816px;
+      height: 550px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -67,7 +71,7 @@
         background: green;
         position: relative;
         display: block;
-        height: 30vw;
+        height: 100%;
         min-height: 450px;
 
         &__content {
@@ -135,6 +139,7 @@
 
         &__background {
           position: absolute;
+          height: 100%;
           width: 100%;
           z-index: -100;
 
