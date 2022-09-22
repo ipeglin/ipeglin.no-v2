@@ -9,7 +9,7 @@ const props = defineProps<Props>();
 
 <template>
   <a class="badge-link" :href="link">
-    <img class="badge-image" :src="image" loading='lazy' />
+    <img class="badge-image accent" :src="image" loading='lazy' />
   </a>
 </template>
 

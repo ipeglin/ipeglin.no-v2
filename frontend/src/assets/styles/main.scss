@@ -8,9 +8,20 @@ body {
 }
 
 img {
-  svg {
-    path {
-      fill: $color-accent;
+
+  &.accent {
+    svg {
+      path {
+        fill: $color-accent;
+      }
+    }
+  }
+
+  &.white {
+    svg {
+      path {
+        fill: $color-white;
+      }
     }
   }
 }

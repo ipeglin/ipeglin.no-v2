@@ -6,7 +6,7 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-  <img class="badge-image" :src="image" loading='lazy'/>
+  <img class="badge-image accent" :src="image" loading='lazy'/>
 </template>
 
 <style scoped lang="scss">

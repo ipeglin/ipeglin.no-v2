@@ -9,7 +9,7 @@
 
   const sortTimeline = (content: TimelineStepInterface[]): TimelineStepInterface[] => {
     return content.sort((a, b) => { 
-      return b.start - a.start 
+      return b.start - a.start
     });
   }
 </script>
