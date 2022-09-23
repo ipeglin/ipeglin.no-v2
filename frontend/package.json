@@ -10,7 +10,6 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@mdi/js": "^7.0.96",
     "axios": "^0.27.2",
     "color-schemes-generator": "^1.0.1",
     "pinia": "^2.0.16",
@@ -34,6 +33,7 @@
     "sass-loader": "^13.0.2",
     "typescript": "~4.7.4",
     "vite": "^3.0.1",
+    "vite-plugin-compression": "^0.5.1",
     "vue-tsc": "^0.38.8"
   }
 }

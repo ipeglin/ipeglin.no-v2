@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { LinkInterface } from '@/assets/interfaces/LinkInterface';
-import { mdiArrowRight } from '@mdi/js';
 
   interface Props {
     title: string,
@@ -23,13 +22,31 @@ import { mdiArrowRight } from '@mdi/js';
         <p class="card-caption">{{ content }}</p>
       </div>
       <div class="link-container">
-        <RouterLink v-if="link" class="card-link" :to="link.value">{{ link.name }}<svg-icon class="arrow-icon" type="mdi" :path="mdiArrowRight" :size="14"></svg-icon></RouterLink>
+        <RouterLink v-if="link" class="card-link" :to="link.value">
+          {{ link.name }}
+          <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon icon icon-tabler icon-tabler-arrow-narrow-right" width="20" height="20" viewBox="0 0 20 20" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <line x1="15" y1="16" x2="19" y2="12"></line>
+              <line x1="15" y1="8" x2="19" y2="12"></line>
+            </svg>
+        </RouterLink>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+  .arrow-icon {
+    svg {
+      fill: $color-accent;
+    }
+
+    line {
+      stroke: $color-accent;
+    }
+  }
+
   .card-container {
     max-width: 300px;
     min-width: 100px;

@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import type { CarouselCardInterface } from '@/assets/interfaces/CarouselCardInterface';
-  import { mdiArrowRight } from '@mdi/js';
   import { ref, toRefs } from '@vue/reactivity';
   import { VueAgile } from 'vue-agile';
   
@@ -28,7 +27,13 @@
             </div>
           </div>
           <a v-if="item.link" :class="`navlink ${showLink ? '' : 'hidden'}`" :href="item.link" target="_blank">
-            View Project<svg-icon class="arrow-icon" type="mdi" :path="mdiArrowRight" :size="18"></svg-icon>
+            View Project
+            <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon icon icon-tabler icon-tabler-arrow-narrow-right" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <line x1="15" y1="16" x2="19" y2="12"></line>
+              <line x1="15" y1="8" x2="19" y2="12"></line>
+            </svg>
           </a>
           <div class="slide__background">
 
