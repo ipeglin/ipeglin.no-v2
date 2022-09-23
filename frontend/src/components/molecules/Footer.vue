@@ -23,7 +23,6 @@
     color: $color-font-light;
 
     .text-container {
-      // background-color: green;
       height: 100%;
 
       .footer__logo {
@@ -31,6 +30,7 @@
         padding-left: 10px;
         img {
           width: 180px;
+          height: 100%;
         }
       }
 

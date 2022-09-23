@@ -30,7 +30,7 @@
     <section class="hero">
       <div class="hero__content">
         <h1 class="hero__title">Hi, I'm Philip</h1>
-        <h3 class="hero__details">a civ.eng. student from Norway</h3>
+        <h2 class="hero__details">a civ.eng. student from Norway</h2>
       </div>
       <div class="hero__mesh-container">
         <Mesh class="hero__mesh" :colors="['#8685ef', '#d3fbd8','#ffffff', '#e7e7e7', '#e7e7e7']" randomize-colors />
