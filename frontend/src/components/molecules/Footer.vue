@@ -6,7 +6,7 @@
   <footer class="footer">
     <div class="container text-container">
       <div class="footer__logo">
-        <img class="white" src="@/assets/img/ipeglin logo long.svg" />
+        <img class="white" alt="Ipeglin Logo" src="@/assets/img/ipeglin logo long.svg" />
       </div>
       <p>Student and developer</p>
     </div>

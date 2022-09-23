@@ -5,7 +5,7 @@
 <template>
   <div class="navigation container">
     <nav>
-      <img class="navigation__logo accent" src="@/assets/img/ipeglin logo short.svg" />
+      <img class="navigation__logo accent" alt="IPE Logo" src="@/assets/img/ipeglin logo short.svg" />
       <ul>
         <li>
           <RouterLink class="navlink" to="/">Home</RouterLink>
