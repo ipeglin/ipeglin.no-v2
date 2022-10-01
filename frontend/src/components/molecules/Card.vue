@@ -1,19 +1,17 @@
 <script setup lang="ts">
+import type { CardInterface } from '@/assets/interfaces/CardInterface';
 import type { LinkInterface } from '@/assets/interfaces/LinkInterface';
 import { mdiArrowRight } from '@mdi/js';
 
   interface Props {
-    title: string,
-    content: string,
-    image?: string,
-    link?: LinkInterface,
+    content: CardInterface
   }
 
   const props = defineProps<Props>();
 </script>
 
 <template>
-  <div class="card-container">
+  <!-- <div class="card-container">
     <div class="card">
       <div v-if="image" class="image-container">
         <img :src="image" class="card-image" />
@@ -26,91 +24,48 @@ import { mdiArrowRight } from '@mdi/js';
         <RouterLink v-if="link" class="card-link" :to="link.value">{{ link.name }}<svg-icon class="arrow-icon" type="mdi" :path="mdiArrowRight" :size="14"></svg-icon></RouterLink>
       </div>
     </div>
-  </div>
+  </div> -->
+  <div class="card">  
+    <div class="card__image"></div>  
+    <div class="card__title"><h3>CAKE</h3></div>  
+    <div class="card__description">$3</div>  
+    <div class="card_link">BUY</div>  
+  </div>  
 </template>
 
 <style scoped lang="scss">
-  .card-container {
-    max-width: 300px;
-    min-width: 100px;
-    margin: 0 auto;
-    margin-top: 20vh;
+  .card {
+    height: 270px;
+    width: 200px;
+    background-color: $color-card-background;
+    margin: 20px;
+    border-radius: 10px;
 
-    .card {
-      background: $color-reenforce;
-      border-radius: 13px;
-      height: 325px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      border: 1px solid $color-darkgray;
+    &__image {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px 10px 0 0;
+    }
 
-      .image-container {
-        height: 55%;
-        width: 100%;
-      }
+    &__title {
+      background-color: red;
+      height: 20px;
+      width: 200px;
+      text-align: center;
+    }
 
-      .card-image {
-        width: 100%;
-        height: 100%;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-        object-fit:cover;
-      }
+    &__description {
+      background-color: yellow;
+      width: fit-content;
+      text-align: center;
+      margin: 0 auto;
+      padding: 6px 15px;
+    }
 
-      .text-container {
-        margin: 0 auto;
-        width: 90%;
-        max-height: 200px;
-        min-height: 300px;
-        margin-bottom: auto;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-
-        .card-title {
-          font-weight: 600;
-          font-size: 1.6em;
-          color: $color-font-primary;
-
-        }
-
-        h1 {
-          margin-block: 10px;
-        }
-
-        .card-caption {
-          margin: 0;
-          font-weight: 400;
-          font-size: .9em;
-        }
-
-      }
-      
-      .link-container {
-        margin-block: 20px;
-        width: 100%;
-        margin-right: 50px;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-
-        .card-link {
-          color: $color-font-primary;
-          text-decoration-color: $color-font-primary;
-          text-underline-offset: 2px;
-          text-decoration-thickness: 1.5px;
-          
-          .arrow-icon {
-            color: $color-accent;
-            margin-left: 8px;
-            transform: scale(1.3);
-          }
-          }
-      }
+    &:hover {
+      transform: scale(1.05);
+      transition-duration: .2s;
+      box-shadow: 8px 8px 30px 0px rgba($color-card-shadow, 0.1);
     }
   }
-
 </style>
