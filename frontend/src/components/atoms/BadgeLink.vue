@@ -8,7 +8,7 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-  <a class="badge-link" :href="link">
+  <a class="badge-link" target="_blank" :href="link">
     <img class="badge-image accent" :src="image" loading='lazy' />
   </a>
 </template>
