@@ -15,6 +15,7 @@
   // Get repos before mounting Carousel component
   onBeforeMount(async () => {
     await githubStore.fetchRepositories();
+    await githubStore.fetchFollowers();
     carouselContent.value = await githubStore.repos;
     carouselContent.value = await parseGitHubRepoArrayToCard(
       sortGitHubReposByPushedAt(
