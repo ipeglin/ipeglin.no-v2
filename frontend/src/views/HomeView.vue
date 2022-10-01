@@ -5,7 +5,7 @@
 
   import { useGitHubStore } from '@/stores/github';
   import { sortGitHubReposByPushedAt } from '@/composables/sorting/github';
-  import { parseGitHubRepoArrayToCard } from '@/composables/parsers/repoToCarouselCard';
+  import { parseGitHubRepoArrayToCarouselCard } from '@/composables/parsers/repoToCarouselCard';
   import { onBeforeMount } from 'vue';
   import { ref } from '@vue/reactivity';
   
@@ -17,7 +17,7 @@
     await githubStore.fetchRepositories();
     await githubStore.fetchFollowers();
     carouselContent.value = await githubStore.repos;
-    carouselContent.value = await parseGitHubRepoArrayToCard(
+    carouselContent.value = await parseGitHubRepoArrayToCarouselCard(
       sortGitHubReposByPushedAt(
         carouselContent.value.filter((repo: any) => repo.name !== 'ipeglin')
       )
@@ -53,6 +53,7 @@
 
 <style scoped lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+  // @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
   .hero {
     height: calc(100vh - 2*60px);
@@ -72,6 +73,7 @@
         font-size: 5rem;
         margin: 0;
         font-family: 'Dancing Script', cursive;
+        // font-family: 'Playfair Display', serif;
         font-weight: bold;
       }
 

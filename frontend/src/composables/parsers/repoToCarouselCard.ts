@@ -1,6 +1,6 @@
 import type { CarouselCardInterface } from "@/assets/interfaces/CarouselCardInterface";
 
-export const parseGitHubRepoToCard = (repoObject: any): CarouselCardInterface => {
+const parseGitHubRepoToCarouselCard = (repoObject: any): CarouselCardInterface => {
   return {
     title: repoObject.name,
     pushed_at: repoObject.pushed_at,
@@ -8,8 +8,8 @@ export const parseGitHubRepoToCard = (repoObject: any): CarouselCardInterface =>
   }
 }
 
-export const parseGitHubRepoArrayToCard = (repoArray: any[]): CarouselCardInterface[] => {
+export const parseGitHubRepoArrayToCarouselCard = (repoArray: any[]): CarouselCardInterface[] => {
   return repoArray.map((repo: any) => {
-    return parseGitHubRepoToCard(repo);
+    return parseGitHubRepoToCarouselCard(repo);
   })
 }
