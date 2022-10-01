@@ -28,6 +28,7 @@ import { onBeforeMount, ref } from "vue";
 <template>
   <main class="container">
     <h1 class="header">Work page</h1>
+    
     <CardSection :content="cardSectionContent.content" />
   </main>
 </template>
