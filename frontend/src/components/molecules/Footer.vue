@@ -4,40 +4,61 @@
 
 <template>
   <footer class="footer">
-    <div class="container text-container">
+    <div class="container logo-container vertical-offset">
       <div class="footer__logo">
-        <img class="white" src="@/assets/img/ipeglin logo long.svg" />
+        <img class="white" alt="Ipeglin Logo" src="@/assets/img/ipeglin logo long.svg" />
       </div>
-      <p>Student and developer</p>
+      <p class="light">Student and Developer</p>
+    </div>
+    <div class="container contact-info vertical-offset">
+      <p class="light">Contact</p>
+      <p>philip@eglin.no</p>
     </div>
   </footer>
 </template>
 
 <style scoped lang="scss">
+  .light {
+    color: $color-font-subtle;
+  }
+
+  .vertical-offset {
+    padding-top: 100px;
+  }
+
   .footer {
     width: 100%;
-    min-height: 300px;
-    height: 10vh;
-    margin-top: 100px;
+    height: 300px;  
+    margin-top: 50px;
     background: $color-black;
     color: $color-font-light;
+    display: flex;
+    flex-direction: row;
 
-    .text-container {
-      // background-color: green;
-      height: 100%;
-
+    .logo-container {
       .footer__logo {
-        padding-top: 80px;
         padding-left: 10px;
+
         img {
-          width: 180px;
+          width: 150px;
+          height: 100%;
         }
       }
 
       p {
         padding-left: 10px;
         margin: 0;
-        color: $color-font-subtle;
+        font-size: 0.815rem;
+      }
+    }
+
+    .contact-info {
+      p:nth-child(1) {
+        margin-top: 0;
+      }
+
+      p {
+        margin: 5px;
       }
     }
   }

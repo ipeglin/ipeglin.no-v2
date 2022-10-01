@@ -31,14 +31,14 @@
     <section class="hero">
       <div class="hero__content">
         <h1 class="hero__title">Hi, I'm Philip</h1>
-        <h3 class="hero__details">a civ.eng. student from Norway</h3>
+        <h2 class="hero__details">a civ.eng. student from Norway</h2>
       </div>
       <div class="hero__mesh-container">
         <Mesh class="hero__mesh" :colors="['#8685ef', '#d3fbd8','#ffffff', '#e7e7e7', '#e7e7e7']" randomize-colors />
       </div>
     </section>
     <div id="down-arrow">
-      <RouterLink to="#highlights">
+      <RouterLink to="#highlights" aria-label="Highlights">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="50" height="50" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
           <polyline points="6 9 12 15 18 9"></polyline>

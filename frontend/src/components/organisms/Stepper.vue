@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import type { NumberedStepInterface } from '@/assets/interfaces/StepInterface';
-  import { mdiChevronRight } from '@mdi/js';
 
   interface Props {
     content: NumberedStepInterface[],
@@ -19,7 +18,10 @@
     <div v-for="(step, index) in content" :class="`step ${step.active ? 'step-active' : ''}`">
       <div>
         <div class="circle">
-          <svg-icon v-if="step.active" class="active-icon" type="mdi" :path="mdiChevronRight" :size="24"></svg-icon>
+          <svg v-if="step.active" xmlns="http://www.w3.org/2000/svg" class="active-icon icon icon-tabler icon-tabler-chevron-right" width="22" height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <polyline points="9 6 15 12 9 18"></polyline>
+          </svg>
           <span v-else>{{ index + 1 }}</span>
         </div>
       </div>
@@ -28,7 +30,11 @@
         <div v-if="step.caption && !Array.isArray(step.caption)" class="caption">{{ step.caption }}</div>
         <div v-else-if="step.caption && Array.isArray(step.caption)" class="caption">
           <div v-for="paragraph in sortCaptionArray(step.caption, 'no')" class="paragraph-list">
-            <svg-icon type="mdi" :path="mdiChevronRight" :size="18" /><p>{{ paragraph }}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="15" height="15" viewBox="0 0 24 21" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <polyline points="9 6 15 12 9 18"></polyline>
+            </svg>
+            <p>{{ paragraph }}</p>
           </div>
         </div>
       </div>
@@ -62,8 +68,9 @@
         align-items: start;
         margin-bottom: -.3em;
 
+        padding-bottom: 2px;
+
         p {
-          padding: 0;
           margin: 0;
           white-space: nowrap;
           overflow: hidden;
