@@ -1,11 +1,16 @@
 import type { CardInterface } from "@/assets/interfaces/CardInterface";
+import { reduceStringArrayToLengthLimit } from "./arrays";
 
 
 export const parseGitHubRepoToCard = (repoObject: any): CardInterface => {
   return {
     title: repoObject.name,
     description: repoObject.description,
-    link: repoObject.html_url,
+    tags: reduceStringArrayToLengthLimit(repoObject.topics, 20),
+    link: {
+      name: 'View',
+      value: repoObject.html_url
+    },
   }
 }
 

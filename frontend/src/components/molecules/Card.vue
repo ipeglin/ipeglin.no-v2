@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import type { CardInterface } from '@/assets/interfaces/CardInterface';
+import { sortStringArrayAlphabetically } from '@/composables/sorting/array';
 
   interface Props {
     content: CardInterface,
@@ -14,11 +15,25 @@
       <img class="card__image__asset" :src="props.content.image || 'https://aerospaceexport.com/wp-content/uploads/2019/12/project-management-I.jpg'" />
     </div>
     <div class="card-content">
-      <div class="card-content__title"><h3 class="truncate">{{props.content.title}}</h3></div>  
+      <div class="card-content__title">
+        <a v-if="props.content.link" :href="props.content.link.value" target="_blank"><h3 class="truncate">{{props.content.title}}</h3></a>
+        <h3 v-else class="truncate">{{props.content.title}}</h3>
+      </div>
       <div class="card-content__description truncate">{{props.content.description}}</div>  
+      <div v-if="props.content.tags" class="card-content__tags">
+        <span v-for="tag in sortStringArrayAlphabetically(props.content.tags)" class="card-content__tags__pill">{{tag}}</span>
+      </div>
     </div>
     <div v-if="props.content.link" class="card__link">
-      <a class="card__link__anchor" :href="props.content.link" target="_blank">View</a>
+      <a class="card__link__anchor" :href="props.content.link.value" target="_blank">
+        {{props.content.link.name}}
+        <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <line x1="15" y1="16" x2="19" y2="12"></line>
+          <line x1="15" y1="8" x2="19" y2="12"></line>
+        </svg>
+      </a>
     </div>  
   </div>  
 </template>
@@ -31,7 +46,7 @@
   }
 
   .card {
-    height: 230px;
+    height: 245px;
     width: 275px;
     background-color: $color-card-background;
     margin: 20px;
@@ -57,24 +72,56 @@
 
     &-content {
       position: absolute;
-      top: 0;
+      display: flex;
+      flex-direction: column;
 
       &__title {
         height: 40px;
-        width: 75%;
+        width: 90%;
         font-size: 1rem;
-        padding: 6px 15px;
+        padding-top: 6px;
+        margin-bottom: 4px;
+        padding-inline: 15px;
         margin-top: 105px;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
-        h3 {
+        a, h3 {
           margin: 0;
+        }
+
+        a {
+          text-decoration: none;
+          color: $color-font-primary;
+        }
+
+      }
+
+      &__tags {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        text-overflow: clip;
+        flex-wrap: nowrap;
+        
+        &__pill {
+          white-space: nowrap;
+          font-size: .7rem;
+          padding: 2px 8px;
+          margin-left: 4px;
+          border: 1px solid $color-black;
+          border-radius: 12px;
+
+          &:nth-child(1) {
+            margin-left: 13px;
+          }
         }
       }
   
       &__description {
+        position: relative;
         width: 225px;
         padding: 6px 15px;
         color: $color-font-emphasize;
@@ -92,6 +139,14 @@
         text-decoration: none;
         color: $color-font-emphasize;
         cursor: pointer;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        svg {
+          margin-left: 5px;
+        }
       }
     }
 
