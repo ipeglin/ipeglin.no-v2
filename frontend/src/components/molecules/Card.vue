@@ -19,7 +19,7 @@ import { sortStringArrayAlphabetically } from '@/composables/sorting/array';
         <a v-if="props.content.link" :href="props.content.link.value" target="_blank"><h3 class="truncate">{{props.content.title}}</h3></a>
         <h3 v-else class="truncate">{{props.content.title}}</h3>
       </div>
-      <div class="card-content__description truncate">{{props.content.description}}</div>  
+      <div v-if="props.content.description" class="card-content__description truncate">{{props.content.description}}</div>  
       <div v-if="props.content.tags" class="card-content__tags">
         <span v-for="tag in sortStringArrayAlphabetically(props.content.tags)" class="card-content__tags__pill">{{tag}}</span>
       </div>
@@ -105,6 +105,7 @@ import { sortStringArrayAlphabetically } from '@/composables/sorting/array';
         flex-direction: row;
         text-overflow: clip;
         flex-wrap: nowrap;
+        padding-top: 4px;
         
         &__pill {
           white-space: nowrap;
@@ -123,7 +124,8 @@ import { sortStringArrayAlphabetically } from '@/composables/sorting/array';
       &__description {
         position: relative;
         width: 225px;
-        padding: 6px 15px;
+        padding-inline: 15px;
+        padding-top: 4px;
         color: $color-font-emphasize;
         font-size: 0.8rem;
       }
