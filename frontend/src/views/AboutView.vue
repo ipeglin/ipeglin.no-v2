@@ -18,6 +18,11 @@ const socials: SocialsInterface[] = [
     alt: 'Visit GitHub profile'
   },
   {
+    image: 'src/assets/img/socials/mail.svg',
+    to: 'mailto:philip@eglin.no',
+    alt: 'Send me an email',
+  },
+  {
     image: 'src/assets/img/socials/twitter.svg',
     to: 'https://twitter.com/philipeglin',
     alt: 'Visit Twitter profile'
@@ -47,7 +52,7 @@ const stepperContent: NumberedStepInterface[] = [
   {
     title: 'Elsys 3.sem',
     caption: ['Datamaskiner og digitalteknikk', 'Fysikk', 'Matte 3', 'ESDA II'],
-    start: new Date('2022-07-04'),
+    start: new Date('2022-07-05'),
     end: new Date('2022-12-14'),
     active: false,
   },
@@ -71,12 +76,12 @@ const timelineContent: TimelineStepInterface[] = [
     title: 'Webutvikler',
     caption: 'Sommerstudent, Adresseavisen',
     start: new Date('2022-06-13'),
-    end: new Date('2022-07-05'),
+    end: new Date('2022-08-05'),
   },
   {
     title: 'Learning assistant',
     caption: 'TDT4110: Informatikk, grunnkurs',
-    start: new Date('2022-07-22'),
+    start: new Date('2022-08-22'),
   }
 ]
 

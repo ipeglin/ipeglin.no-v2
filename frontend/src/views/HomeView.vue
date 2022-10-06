@@ -6,18 +6,15 @@
   import { useGitHubStore } from '@/stores/github';
   import { sortGitHubReposByPushedAt } from '@/composables/sorting/github';
   import { parseGitHubRepoArrayToCarouselCard } from '@/composables/parsers/repoToCarouselCard';
-  import { onBeforeMount } from 'vue';
+  import { onMounted } from 'vue';
   import { ref } from '@vue/reactivity';
   
   const githubStore = useGitHubStore();
   const carouselContent = ref<CarouselCardInterface[]>();
-
-  // Get repos before mounting Carousel component
-  onBeforeMount(async () => {
-    await githubStore.fetchRepositories();
-    await githubStore.fetchFollowers();
-    carouselContent.value = await githubStore.repos;
-    carouselContent.value = await parseGitHubRepoArrayToCarouselCard(
+  
+  onMounted(() => {
+    carouselContent.value = githubStore.repos;
+    carouselContent.value = parseGitHubRepoArrayToCarouselCard(
       sortGitHubReposByPushedAt(
         carouselContent.value.filter((repo: any) => repo.name !== 'ipeglin')
       )
