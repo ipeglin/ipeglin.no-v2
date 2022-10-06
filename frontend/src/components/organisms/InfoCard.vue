@@ -14,11 +14,6 @@
 
   const props = defineProps<Props>();
   const githubStore = useGitHubStore();
-
-  onBeforeMount(() => {
-      githubStore.fetchRepositories();
-      githubStore.fetchFollowers();
-  })
 </script>
 
 <template>
@@ -145,11 +140,11 @@
       .profile-card__socials {
         margin-top: 10px;
         margin-bottom: 20px;
-        width: 80%;
-        max-width: 150px;
+        width: 100%;
+        max-width: 150px;  
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
       }
     }
   }
