@@ -46,7 +46,7 @@ export const useGitHubStore = defineStore('github', {
       }
     },
     async fetchRepoImages() {
-      if (Object.keys(this.repoImages).length  !== 0) return console.info('Images have allready been fetched', this.repoImages);
+      if (Object.keys(this.repoImages).length  !== 0) return console.info('Images have allready been fetched');
 
       console.info('Fetching repo images from database')
 
@@ -62,7 +62,7 @@ export const useGitHubStore = defineStore('github', {
             const imageName = itemRef.name.replace(/\.[^/.]+$/, "");
             if (repoNames.includes(imageName)) {
               getDownloadURL(itemRef)
-                .then((url) => this.repoImages[imageName] = url).then(() => console.info('Fetched image URL for repo:', imageName));
+                .then((url) => this.repoImages[imageName] = url);
             }
           })
           this.images;
