@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import type { CardInterface } from '@/assets/interfaces/CardInterface';
-import { sortStringArrayAlphabetically } from '@/composables/sorting/array';
+  import { sortStringArrayAlphabetically } from '@/composables/sorting/array';
 
   interface Props {
     content: CardInterface,
@@ -59,15 +59,25 @@ import { sortStringArrayAlphabetically } from '@/composables/sorting/array';
       height: 150px;
       border-radius: 10px 10px 0 0;
       position: absolute;
-
+      
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(0,0,0,0.45) 100%);
+      }
+      
       &__asset {
-            width: 100%;
-            height: 150px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            -o-object-fit: cover;
-            object-fit: cover;
-          }
+        width: 100%;
+        height: 150px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
     }
 
     &-content {
@@ -86,9 +96,11 @@ import { sortStringArrayAlphabetically } from '@/composables/sorting/array';
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        
         a, h3 {
           margin: 0;
+          color: $color-font-light;
+          filter: invert(1);
         }
 
         a {
