@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import axios from 'axios';
-import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
+import { ref, getDownloadURL, listAll } from "firebase/storage";
+import { storage } from '@/firebase';
 
 export const useGitHubStore = defineStore('github', {
   state: () => ({
@@ -50,7 +51,7 @@ export const useGitHubStore = defineStore('github', {
       console.info('Fetching repo images from database')
 
       // Create a reference to the file we want to download
-      const storage = getStorage();
+      // const storage = getStorage();
       const listRef = ref(storage, 'images/repos');
 
       const repoNames = await this.repos.map((repo: any) => repo.name);
