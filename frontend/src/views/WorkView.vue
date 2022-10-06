@@ -3,7 +3,7 @@
   import { parseGitHubRepoArrayToCard } from "@/composables/parsers/repoToCard";
   import { sortGitHubReposByCreatedAt } from "@/composables/sorting/github";
   import { useGitHubStore } from "@/stores/github";
-  import { onMounted, ref } from "vue";
+  import { onBeforeMount, ref } from "vue";
   import CardSection from "../components/organisms/CardSection.vue";
 
   const githubStore = useGitHubStore();
@@ -12,12 +12,13 @@
     content: CardInterface[],
   }>({content: []});
 
-  onMounted(() => {
-    // cardSectionContent.value.content = await githubStore.repos;
-    cardSectionContent.value.content = parseGitHubRepoArrayToCard(
+  onBeforeMount(async () => {
+    cardSectionContent.value.content = await githubStore.repos;
+    const repoImages = await githubStore.images;
+    cardSectionContent.value.content = await parseGitHubRepoArrayToCard(
       sortGitHubReposByCreatedAt(
         githubStore.repos.filter((repo: any) => repo.name !== 'ipeglin')
-      )
+      ), repoImages
     )
   })
 
