@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import type { CarouselCardInterface } from '@/assets/interfaces/CarouselCardInterface';
+import { useGitHubStore } from '@/stores/github';
   import { ref, toRefs } from '@vue/reactivity';
   import { VueAgile } from 'vue-agile';
   
@@ -11,6 +12,8 @@
             
   const props = defineProps<Props>();
   const { content } = toRefs(props);
+
+  const githubStore = useGitHubStore();
 
   const showLink = ref<boolean>(false);
 </script>
@@ -36,7 +39,7 @@
             </svg>
           </a>
           <div class="slide__background">
-            <img alt="Project image" :src="item.img || 'https://aerospaceexport.com/wp-content/uploads/2019/12/project-management-I.jpg'"/>
+            <img alt="Project image" :src="githubStore.images[item.title] || 'https://aerospaceexport.com/wp-content/uploads/2019/12/project-management-I.jpg'"/>
           </div>
         </div>
       </VueAgile>

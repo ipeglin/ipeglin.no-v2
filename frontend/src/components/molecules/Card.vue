@@ -12,7 +12,7 @@
 <template>
   <div class="card">  
     <div class="card__image">
-      <img class="card__image__asset" :src="props.content.image || 'https://aerospaceexport.com/wp-content/uploads/2019/12/project-management-I.jpg'" />
+      <img class="card__image__asset" :src="props.content.image || 'https://img.freepik.com/free-vector/business-people-working-project-flat-icon_1262-18770.jpg?w=1060&t=st=1665266357~exp=1665266957~hmac=c3f32da600bcd5a7ba29231a96e4b547b804fd6bdfd6aeac3b099d428a3e4a9d'" />
     </div>
     <div class="card-content">
       <div class="card-content__title">
