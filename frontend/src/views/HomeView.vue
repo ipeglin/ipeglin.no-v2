@@ -1,25 +1,14 @@
 <script setup lang="ts">
-  import type { CarouselCardInterface } from '@/assets/interfaces/CarouselCardInterface';
   import Mesh from '@/components/molecules/Mesh.vue';
   import Carousel from '../components/organisms/Carousel.vue';
 
   import { useGitHubStore } from '@/stores/github';
   import { sortGitHubReposByPushedAt } from '@/composables/sorting/github';
   import { parseGitHubRepoArrayToCarouselCard } from '@/composables/parsers/repoToCarouselCard';
-  import { onMounted } from 'vue';
-  import { ref } from '@vue/reactivity';
+  import { storeToRefs } from 'pinia';
   
   const githubStore = useGitHubStore();
-  const carouselContent = ref<CarouselCardInterface[]>();
-  
-  onMounted(() => {
-    carouselContent.value = githubStore.repos;
-    carouselContent.value = parseGitHubRepoArrayToCarouselCard(
-      sortGitHubReposByPushedAt(
-        carouselContent.value.filter((repo: any) => repo.name !== 'ipeglin')
-      )
-    )
-  })
+  const { repositories, repoImages } = storeToRefs(githubStore);
   
 </script>
 
@@ -44,7 +33,11 @@
     </div>
   </main>
   <main class="container">
-    <Carousel v-if="carouselContent" id="highlights" title="Recent Projects" :content="carouselContent.slice(0, 4)"/>
+    <Carousel v-if="repositories.length !== 0" id="highlights" title="Recent Projects" :content="parseGitHubRepoArrayToCarouselCard(
+      sortGitHubReposByPushedAt(
+        repositories.filter((repo: any) => repo.name !== 'ipeglin')
+      ), repoImages
+    ).slice(0, 4)"/>
   </main>
 </template>
 

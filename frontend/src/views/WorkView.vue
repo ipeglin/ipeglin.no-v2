@@ -1,33 +1,22 @@
 <script setup lang="ts">
-  import type { CardInterface } from "@/assets/interfaces/CardInterface";
   import { parseGitHubRepoArrayToCard } from "@/composables/parsers/repoToCard";
   import { sortGitHubReposByCreatedAt } from "@/composables/sorting/github";
   import { useGitHubStore } from "@/stores/github";
-  import { onBeforeMount, ref } from "vue";
+  import { storeToRefs } from "pinia";
   import CardSection from "../components/organisms/CardSection.vue";
 
   const githubStore = useGitHubStore();
-  
-  const cardSectionContent = ref<{
-    content: CardInterface[],
-  }>({content: []});
-
-  onBeforeMount(async () => {
-    cardSectionContent.value.content = await githubStore.repos;
-    const repoImages = await githubStore.images;
-    cardSectionContent.value.content = await parseGitHubRepoArrayToCard(
-      sortGitHubReposByCreatedAt(
-        githubStore.repos.filter((repo: any) => repo.name !== 'ipeglin')
-      ), repoImages
-    )
-  })
-
+  const { repositories, repoImages } = storeToRefs(githubStore);
 </script>
 
 <template>
   <main class="container">
     <h1 class="header">My projects</h1>
-    <CardSection :content="cardSectionContent.content" />
+    <CardSection :content="parseGitHubRepoArrayToCard(
+      sortGitHubReposByCreatedAt(
+        repositories.filter((repo: any) => repo.name !== 'ipeglin')
+      ), repoImages
+    )" />
   </main>
 </template>
 
