@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import type { SocialsInterface } from "@/assets/interfaces/SocialsInterface";
   import { useGitHubStore } from "@/stores/github";
-  import { onBeforeMount } from "vue";
   import BadgeHandler from "../handlers/BadgeHandler.vue";
   import Mesh from "../molecules/Mesh.vue";
 
@@ -21,7 +20,7 @@
       <img v-if="image" :src="image" class="profile-card__image" />
       <div class="profile-card__content">
         <h1 :class="`profile-card__title ${underlineTitle ? 'underline' : ''}`">{{ title }}</h1>
-        <div>Student and developer</div>
+        <div>Student and Developer</div>
   
         <div class="profile-card__location">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
