@@ -130,6 +130,13 @@
           &:nth-child(1) {
             margin-left: 13px;
           }
+
+          &:hover {
+            cursor: default;
+            border-color: hsl(131, 67%, 40%);
+            color: hsl(131, 67%, 40%);
+            transition-duration: .2s;
+          }
         }
       }
   
