@@ -53,12 +53,6 @@
           console.error(error);
         });
   });
-
-  // onBeforeMount(async () => {
-  //   await githubStore.fetchRepositories();
-  //   await githubStore.fetchFollowers();
-  //   await githubStore.fetchRepoImages();
-  // });
 </script>
 
 <template>
