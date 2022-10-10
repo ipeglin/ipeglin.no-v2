@@ -11,16 +11,7 @@
   
   const githubStore = useGitHubStore();
   const animationStore = useAnimationStore();
-  const { repositories, repoImages } = storeToRefs(githubStore);
-
-  onMounted(() => {
-    if (animationStore.disableHeroTitle)
-      setTimeout(() => {
-        animationStore.disableHeroTitle();
-
-      }, 3000);
-  });
-  
+  const { repositories, repoImages } = storeToRefs(githubStore);  
 </script>
 
 <template>

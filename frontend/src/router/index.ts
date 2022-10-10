@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import { useAnimationStore } from '@/stores/animations';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,5 +33,11 @@ const router = createRouter({
     }
   },
 });
+
+router.beforeEach((to, from) => {
+  const animationStore = useAnimationStore();
+  if (from.name === 'home' && animationStore.showHeroTitle)
+    animationStore.disableHeroTitle();
+})
 
 export default router;
