@@ -6,9 +6,20 @@
   import { sortGitHubReposByPushedAt } from '@/composables/sorting/github';
   import { parseGitHubRepoArrayToCarouselCard } from '@/composables/parsers/repoToCarouselCard';
   import { storeToRefs } from 'pinia';
+  import { useAnimationStore } from '@/stores/animations';
+  import { onMounted } from 'vue';
   
   const githubStore = useGitHubStore();
+  const animationStore = useAnimationStore();
   const { repositories, repoImages } = storeToRefs(githubStore);
+
+  onMounted(() => {
+    if (animationStore.disableHeroTitle)
+      setTimeout(() => {
+        animationStore.disableHeroTitle();
+
+      }, 3000);
+  });
   
 </script>
 
@@ -16,10 +27,10 @@
   <main>
     <section class="hero">
       <div class="hero__content">
-        <div class="hero__title animate-header">
+        <div :class="`hero__title ${animationStore.showHeroTitle ? 'animate-header' : ''}`">
           <h1>Hi, I'm Philip</h1>
         </div>
-        <div class="hero__details animate-header">
+        <div :class="`hero__details ${animationStore.showHeroTitle ? 'animate-header' : ''}`">
           <h2>a civ.eng. student from Norway</h2>
         </div>
       </div>
@@ -58,7 +69,7 @@
   }
 
   .hero__content {
-    overflow: hidden;
+    overflow-y: hidden;
     position: absolute;
   }
 
@@ -107,7 +118,6 @@
           font-size: 5rem;
           margin: 0;
           font-family: 'Dancing Script', cursive;
-          // font-family: 'Playfair Display', serif;
           font-weight: bold;
         }
       }
