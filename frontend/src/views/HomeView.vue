@@ -16,8 +16,12 @@
   <main>
     <section class="hero">
       <div class="hero__content">
-        <h1 class="hero__title">Hi, I'm Philip</h1>
-        <h2 class="hero__details">a civ.eng. student from Norway</h2>
+        <div class="hero__title animate-header">
+          <h1>Hi, I'm Philip</h1>
+        </div>
+        <div class="hero__details animate-header">
+          <h2>a civ.eng. student from Norway</h2>
+        </div>
       </div>
       <div class="hero__mesh-container">
         <Mesh class="hero__mesh" :colors="['#8685ef', '#d3fbd8','#ffffff', '#e7e7e7', '#e7e7e7']" randomize-colors />
@@ -41,6 +45,40 @@
   </main>
 </template>
 
+<style scoped>
+  @keyframes showTopText {
+    0% { transform: translate3d(0, 100%, 0); }
+    50% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+
+  @keyframes showBottomText {
+    0% { transform: translate3d(0, -100%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+
+  .hero__content {
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .animate-header h1 {
+    animation: showTopText 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    bottom: 0;
+    transform: translate(0, 100%);
+  }
+
+  .animate-header h2 {
+    animation: showBottomText 0.5s;
+    animation-delay: 1.75s;
+    animation-fill-mode: forwards;
+    top: 0;
+    transform: translate(0, -100%);
+  }
+</style>
+
 <style scoped lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
   // @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
@@ -53,23 +91,38 @@
       z-index: 10;
       top: 35%;
       left: 20%;
-      height: 30%;
+      height: 130px;
       width: 50%;
       position: absolute;
       display: flex;
       flex-direction: column;
 
       .hero__title {
-        font-size: 5rem;
-        margin: 0;
-        font-family: 'Dancing Script', cursive;
-        // font-family: 'Playfair Display', serif;
-        font-weight: bold;
+        position: relative;
+        width :100%;
+        overflow: hidden;
+
+        h1 {
+          display: block;
+          font-size: 5rem;
+          margin: 0;
+          font-family: 'Dancing Script', cursive;
+          // font-family: 'Playfair Display', serif;
+          font-weight: bold;
+        }
       }
 
       .hero__details {
-        font-size: 1.55rem;
-        margin: 0;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        bottom: 0;
+
+        h2 {
+          display: block;
+          font-size: 1.55rem;
+          margin: 0;
+        }
       }
     }
     
