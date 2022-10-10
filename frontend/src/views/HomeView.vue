@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="hero__mesh-container">
-        <Mesh class="hero__mesh" :colors="['#8685ef', '#d3fbd8','#ffffff', '#e7e7e7', '#e7e7e7']" randomize-colors />
+        <Mesh class="hero__mesh" :colors="['#e7e7e7', '#8685ef','#ffffff', '#e7e7e7', '#d3fbd8']" />
       </div>
     </section>
     <div id="down-arrow">
