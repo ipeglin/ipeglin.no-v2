@@ -1,0 +1,18 @@
+// SCSS mixin for adding styling for dark theme
+@mixin dark() {
+  @media (prefers-color-scheme: dark) {
+    @at-root #{selector-nest(':root:not([data-theme=light]):not([data-theme=dark])', &)} {
+      @content;
+    }
+  }
+  @at-root #{selector-nest(':root[data-theme=dark]', &)} {
+    @content;
+  }
+}
+
+// Scss mixing for querying mobile devices
+@mixin mobile() {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
