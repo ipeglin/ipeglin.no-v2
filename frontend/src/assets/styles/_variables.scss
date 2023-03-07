@@ -1,6 +1,6 @@
 // Sizes
-$max-width: 960px;
-
+$max-width-desktop: 960px;
+$max-width-mobile: 340px;
 
 // Color palette
 // $color-black: #3b3b3b;
@@ -8,7 +8,7 @@ $color-black: #191919;
 $color-accent: #8685ef;
 $color-white: #ffffff;
 $color-reenforce: #d3fbd8;
-$color-success: #77E48B;
+$color-success: #77e48b;
 $color-gray: #e7e7e7;
 $color-darkgray: #b3b3b3;
 
@@ -22,7 +22,7 @@ $color-font-emphasize: #333333;
 $color-button-primary: $color-accent;
 $color-button-hover: hsl(241, 77%, 70%);
 $color-button-disabled: $color-gray;
-$color-button-shadow: rgba($color-button-primary, .3);
+$color-button-shadow: rgba($color-button-primary, 0.3);
 
 // Card
 $color-card-background: #e7e7e7;

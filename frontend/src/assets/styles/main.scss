@@ -7,8 +7,20 @@ body {
   color: $color-font-primary;
 }
 
-img {
+* {
+  box-sizing: border-box;
+}
 
+a {
+  text-decoration: none;
+  color: $color-font-primary;
+
+  &:visited {
+    color: $color-font-primary;
+  }
+}
+
+img {
   &.accent {
     svg {
       path {
@@ -35,6 +47,11 @@ img {
 }
 
 .container {
-  max-width: $max-width;
+  max-width: $max-width-desktop;
   margin: 0 auto;
+
+  @include mobile() {
+    max-width: $max-width-mobile;
+    margin: 0 auto;
+  }
 }
