@@ -21,7 +21,7 @@
       </RouterLink>
     </div>
     <div class="menu-icon" @click="handleMobileMenuToggle">
-      <IconMenu2 />
+      <IconMenu2 width="28" height="28" />
     </div>
     <div
       id="nav-link-section"
@@ -88,13 +88,12 @@
     }
 
     #nav-logo-section {
-      height: 80%;
+      height: 75%;
       max-height: 80px;
       padding: 0;
 
       .navlink {
         height: 100%;
-        width: 80%;
 
         img {
           height: 100%;
