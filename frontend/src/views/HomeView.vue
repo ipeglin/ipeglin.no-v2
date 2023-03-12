@@ -184,5 +184,8 @@
       color: $color-accent;
     }
   }
-    
+
+  .carouselSection {
+    width: 100%;
+  }
 </style>
