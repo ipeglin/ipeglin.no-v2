@@ -1,15 +1,16 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from 'node:url';
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  base: '/ipeglin.no',
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
   },
   css: {
     preprocessorOptions: {
@@ -17,14 +18,14 @@ export default defineConfig({
         additionalData: `
           @import "@/assets/styles/_variables.scss";
           @import "@/assets/styles/_mixins.scss";
-        `
-      }
-    }
+        `,
+      },
+    },
   },
   optimizeDeps: {
-    include: [ 'lodash.throttle', 'lodash.orderby' ],
+    include: ['lodash.throttle', 'lodash.orderby'],
   },
   build: {
     reportCompressedSize: true,
-  }
-})
+  },
+});
