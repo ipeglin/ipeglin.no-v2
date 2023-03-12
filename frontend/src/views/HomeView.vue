@@ -135,6 +135,10 @@
       display: flex;
       flex-direction: column;
 
+      @include mobile() {
+        width: auto;
+      }
+
       .hero__title {
         position: relative;
         width: 100%;
@@ -146,6 +150,10 @@
           margin: 0;
           font-family: 'Dancing Script', cursive;
           font-weight: bold;
+
+          @include mobile() {
+            font-size: 3rem;
+          }
         }
       }
 
@@ -159,6 +167,10 @@
           display: block;
           font-size: 1.55rem;
           margin: 0;
+
+          @include mobile() {
+            font-size: 1rem;
+          }
         }
       }
     }
