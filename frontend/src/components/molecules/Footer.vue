@@ -1,12 +1,10 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <footer class="footer">
     <div class="container logo-container vertical-offset">
       <div class="footer__logo">
-        <img class="white" alt="Ipeglin Logo" src="@/assets/img/ipeglin logo long.svg" />
+        <img class="white" alt="Ipeglin Logo" src="@/assets/img/logo.svg" />
       </div>
       <p class="light">Student and Developer</p>
     </div>
@@ -28,7 +26,7 @@
 
   .footer {
     width: 100%;
-    height: 300px;  
+    height: 300px;
     margin-top: 50px;
     background: $color-black;
     color: $color-font-light;
