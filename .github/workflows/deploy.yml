@@ -44,7 +44,7 @@ jobs:
           node-version: 18
           
       - name: Install dependencies
-        run: yarn ci
+        run: yarn install
         working-directory: ./frontend/
         env: 
           CI: true
